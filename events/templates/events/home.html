@@ -1,13 +1,14 @@
 
 <!doctype html>
 <html lang="en">
+{% load static %}
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.79.0">
-    <title>Album example · Bootstrap v5.0</title>
+    <title>My Blog</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/album/">
 
@@ -54,13 +55,13 @@
     <div class="collapse navbar-collapse " id="navbarNav">
       <ul class="navbar-nav ml-auto ">
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="#">About me</a>
+          <a class="nav-link" aria-current="page" href="{% static 'CV_AndriiKomarenets_JnPythonDev.pdf' %}">About me</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Facebook</a>
+          <a class="nav-link" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/andrii-komarenets-95697613b/">LinkedIn</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Blog</a>
+          <a class="nav-link" href="{% url 'showblog' %}">Blog</a>
         </li>
       </ul>
     </div>

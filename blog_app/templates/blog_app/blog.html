@@ -1,4 +1,4 @@
-
+{% load static %}
 <!doctype html>
 <html lang="en">
   <head>
@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.79.0">
-    <title>Album example · Bootstrap v5.0</title>
+    <title>Blog</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/album/">
 
@@ -47,17 +47,17 @@
 <header>
   <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #efc07a;">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">My Blog</a>
+    <a class="navbar-brand" href="{% url 'home' %}">My Blog</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse " id="navbarNav">
       <ul class="navbar-nav ml-auto ">
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="#">About me</a>
+<a class="nav-link" aria-current="page" href="{% static 'CV_AndriiKomarenets_JnPythonDev.pdf' %}">About me</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Facebook</a>
+          <a class="nav-link" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/andrii-komarenets-95697613b/">LinkedIn</a>
         </li>
         <li class="nav-item">
           <a class="nav-link active" href="#">Blog</a>
@@ -70,7 +70,7 @@
 <div class="container">
 <h1>Recent Posts</h1>
     {% for post in posts.all %}
-  <a href=""><h2>{{post.title}}</h2></a>
+  <a href="{% url 'specific_post' post.id %}"><h2>{{post.title}}</h2></a>
   <img src="{{post.post_image.url}}" height="200" width="300">
   <br>
   <p>{{ post.get_summary }}</p>
